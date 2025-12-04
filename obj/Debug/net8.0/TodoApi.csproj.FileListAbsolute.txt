@@ -436,3 +436,4 @@ C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToD
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.pdb
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.genruntimeconfig.cache
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\ref\TodoApi.dll
+C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.sourcelink.json
