@@ -9,6 +9,32 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
+try
+{
+    builder.Services.AddDbContext<ToDoDbContext>(options =>
+        options.UseMySql(
+            builder.Configuration.GetConnectionString("ToDoDB"), 
+            new MySqlServerVersion(new Version(8, 0, 44))));
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"❌ Database connection failed: {ex.Message}");
+}
+
+// ✅ וודא שה-Configuration variables קיימים
+var jwtKey = builder.Configuration["Jwt:Key"];
+var jwtIssuer = builder.Configuration["Jwt:Issuer"];
+var jwtAudience = builder.Configuration["Jwt:Audience"];
+
+if (string.IsNullOrEmpty(jwtKey) || string.IsNullOrEmpty(jwtIssuer) || string.IsNullOrEmpty(jwtAudience))
+{
+    throw new InvalidOperationException(
+        "❌ JWT configuration is missing! Check Environment Variables in Render:\n" +
+        $"  - Jwt__Key: {(string.IsNullOrEmpty(jwtKey) ? "❌ MISSING" : "✅ OK")}\n" +
+        $"  - Jwt__Issuer: {(string.IsNullOrEmpty(jwtIssuer) ? "❌ MISSING" : "✅ OK")}\n" +
+        $"  - Jwt__Audience: {(string.IsNullOrEmpty(jwtAudience) ? "❌ MISSING" : "✅ OK")}");
+}
+
 // הוספת שירותים ל-Dependency Injection
 builder.Services.AddDbContext<ToDoDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("ToDoDB"), 
