@@ -641,7 +641,31 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
-
+// ✅ יצור/עדכן טבלות בעת startup (בטוח יותר מ-EnsureCreated)
+try
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<ToDoDbContext>();
+        
+        // ✅ זה יותר בטוח - משתמש ב-Migrations אם קיימים
+        if (context.Database.GetPendingMigrations().Any())
+        {
+            context.Database.Migrate();
+        }
+        else
+        {
+            // אם אין Migrations, נסה ליצור טבלות (עם IF NOT EXISTS)
+            context.Database.EnsureCreated();
+        }
+        
+        Console.WriteLine("✅ Database initialized successfully");
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"❌ Error initializing database: {ex.Message}");
+}
 // ✅ HTTPS Redirect
 if (!app.Environment.IsDevelopment())
 {
