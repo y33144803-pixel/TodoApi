@@ -535,10 +535,13 @@ builder.Services.AddRateLimiter(rateLimiterOptions =>
 //     }
 // });
 // ✅ CORS עם Frontend URL בענן
+
+
+// ✅ CORS עם Frontend URL בענן
 var corsOrigins = new[] 
 { 
-    "https://todolistreact-frqz.onrender.com",  // ✅ הוסף את Frontend URL
-    "http://localhost:3000"                       // עדיין צריך לפיתוח
+    "https://todolistreact-frqz.onrender.com",
+    "http://localhost:3000"
 };
 
 builder.Services.AddCors(options =>

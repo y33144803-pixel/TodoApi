@@ -295,6 +295,7 @@ C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\pra
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\practicod3-kravitz-yaeli\‏‏TodoApi - עותק\obj\Debug\net8.0\ref\TodoApi.dll
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\bin\Debug\net8.0\appsettings.json
+C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\bin\Debug\net8.0\appsettings.Production.json
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\bin\Debug\net8.0\TodoApi.exe
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\bin\Debug\net8.0\TodoApi.deps.json
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\bin\Debug\net8.0\TodoApi.runtimeconfig.json
@@ -422,6 +423,7 @@ C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToD
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.csproj.CoreCompileInputs.cache
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.sourcelink.json
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\staticwebassets\msbuild.TodoApi.Microsoft.AspNetCore.StaticWebAssets.props
@@ -436,4 +438,3 @@ C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToD
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.pdb
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.genruntimeconfig.cache
 C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\ref\TodoApi.dll
-C:\Users\user1\Documents\יעלי\סמינר\תכנות\שנה ב\practicode\ToDo\ToDoApi\obj\Debug\net8.0\TodoApi.sourcelink.json
