@@ -513,7 +513,33 @@ builder.Services.AddRateLimiter(rateLimiterOptions =>
 });
 
 // ✅ CORS
-var corsOrigins = allowedOrigins ?? new[] { "http://localhost:3000" };
+// var corsOrigins = allowedOrigins ?? new[] { "http://localhost:3000" };
+
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy("AllowSpecific",
+//         policy => policy
+//             .WithOrigins(corsOrigins)
+//             .AllowCredentials()
+//             .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//             .WithHeaders("Authorization", "Content-Type", "Accept")
+//             .SetPreflightMaxAge(TimeSpan.FromHours(1)));
+
+//     if (environment == "Development")
+//     {
+//         options.AddPolicy("AllowAll",
+//             policy => policy
+//                 .AllowAnyOrigin()
+//                 .AllowAnyMethod()
+//                 .AllowAnyHeader());
+//     }
+// });
+// ✅ CORS עם Frontend URL בענן
+var corsOrigins = new[] 
+{ 
+    "https://todolistreact-frqz.onrender.com",  // ✅ הוסף את Frontend URL
+    "http://localhost:3000"                       // עדיין צריך לפיתוח
+};
 
 builder.Services.AddCors(options =>
 {
