@@ -642,24 +642,36 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 // ✅ יצור/עדכן טבלות בעת startup (בטוח יותר מ-EnsureCreated)
+// ✅ יוצר טבלות בלי למחוק נתונים
 try
 {
     using (var scope = app.Services.CreateScope())
     {
         var context = scope.ServiceProvider.GetRequiredService<ToDoDbContext>();
         
-        // ✅ זה יותר בטוח - משתמש ב-Migrations אם קיימים
-        if (context.Database.GetPendingMigrations().Any())
-        {
-            context.Database.Migrate();
-        }
-        else
-        {
-            // אם אין Migrations, נסה ליצור טבלות (עם IF NOT EXISTS)
-            context.Database.EnsureCreated();
-        }
+        // ✅ זה יוצר בטבלה בלי IF NOT EXISTS
+        await context.Database.EnsureCreatedAsync();
         
-        Console.WriteLine("✅ Database initialized successfully");
+        // ✅ ודא שה-Users table קיימת
+        var canConnect = await context.Database.CanConnectAsync();
+        if (canConnect)
+        {
+            await context.Database.ExecuteSqlRawAsync(
+                @"CREATE TABLE IF NOT EXISTS `users` (
+                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                    `username` VARCHAR(50) NOT NULL UNIQUE,
+                    `password` VARCHAR(255) NOT NULL
+                )");
+            
+            await context.Database.ExecuteSqlRawAsync(
+                @"CREATE TABLE IF NOT EXISTS `items` (
+                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                    `name` VARCHAR(100),
+                    `is_complete` TINYINT(1)
+                )");
+            
+            Console.WriteLine("✅ Database tables created/verified successfully");
+        }
     }
 }
 catch (Exception ex)
